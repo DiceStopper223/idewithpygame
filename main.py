@@ -10,7 +10,7 @@ screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Text Editor")
 
 #Set the font and font size
-font = pygame.font.Font(None, 36)
+font = pygame.font.Font("freesansbold.ttf", 36)
 number_font = pygame.font.Font(None, 36)
 
 #Text to be displayed in the editor
