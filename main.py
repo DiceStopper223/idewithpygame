@@ -1,22 +1,22 @@
 import pygame
 
-# Initialize pygame
+#Initialize pygame
 pygame.init()
 
-# Set the screen size
+#Set the screen size
 screen = pygame.display.set_mode((800, 600))
 
-# Set the title of the screen
+#Set the title of the screen
 pygame.display.set_caption("Text Editor")
 
-# Set the font and font size
+#Set the font and font size
 font = pygame.font.Font(None, 36)
 number_font = pygame.font.Font(None, 36)
 
-# Text to be displayed in the editor
+#Text to be displayed in the editor
 text = ""
 
-# Run the main loop
+#Run the main loop
 running = True
 while running:
     for event in pygame.event.get():
@@ -30,20 +30,20 @@ while running:
             else:
                 text += event.unicode
     
-    # Clear the screen
+    #Clear the screen
     screen.fill((255, 255, 255))
     
-    # Get the lines of text
+    #Get the lines of text
     lines = text.split("\n")
     
-    # Render the line numbers
+    #Render the line numbers
     line_number = 1
     for line in lines:
         text_surface = number_font.render(str(line_number), True, (192, 192, 192))
         screen.blit(text_surface, (0, (line_number - 1) * 40))
         line_number += 1
     
-    # Render the text
+    #Render the text
     line_number = 1
     for line in lines:
         if "function" in line:
@@ -53,8 +53,8 @@ while running:
         screen.blit(text_surface, (50, (line_number - 1) * 40))
         line_number += 1
     
-    # Update the screen
+    #Update the screen
     pygame.display.update()
 
-# Quit pygame
+#Quit pygame
 pygame.quit()
